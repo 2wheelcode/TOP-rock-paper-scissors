@@ -15,7 +15,7 @@ I. create a function computerPlay() {
 */
 const rpsValue = Math.floor(Math.random()*3)
 function computerPlay() { 
-    return ["Rock", "Paper", "Scissors"][rpsValue]   
+    return ["rock", "paper", "scissors"][rpsValue]   
 }
 console.log(rpsValue) // = random number - CHECK
 console.log(computerPlay()) // = random number converted to array value - CHECK
@@ -33,17 +33,26 @@ II. create a function playRockPaperScissors() {
 } */
 playerInput = prompt("Let's play Rock - Paper - Scissors! \n What's your choice?")
 function playerSelection() {
-return playerInput.toLowerCase().replace(/\b(\w)/, s => s.toUpperCase())
+return playerInput.toLowerCase()
 }
 console.log(playerInput) // = player input - CHECK
-console.log(playerSelection()) // = player input converted to Capitalize, case insensitive - CHECK
+console.log(playerSelection()) // = player input converted to Capitalize, case insensitive - CHECK - changed to lowercase for simplicity
 
 function playRPS() {
-    
-
+    if (playerSelection === computerPlay) {
+        return "Tie Game!"
+        } else if (
+            (playerSelection === 'rock' && computerPlay === 'scissors') ||
+            (playerSelection === 'scissors' && computerPlay === 'paper') ||
+            (playerSelection === 'paper' && computerPlay === 'rock')) {
+                return "Man beats machine! You win!" 
+        } else {
+            return "Machine wins, suffer shame."
+        }
     //return winnerDeclaration
 }
-
+playRPS()
+console.log(playRPS())
 
 
 /*

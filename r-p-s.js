@@ -38,7 +38,7 @@ return playerInput.toLowerCase()
 console.log(playerInput) // = player input - CHECK
 console.log(playerSelection()) // = player input converted to Capitalize, case insensitive - CHECK - changed to lowercase for simplicity
 
-function playRPS() {
+function playRPS(playerSelection, computerPlay) {
     if (playerSelection === computerPlay) {
         return "Tie Game!"
         } else if (
@@ -51,7 +51,7 @@ function playRPS() {
         }
     //return winnerDeclaration
 }
-playRPS()
+//playRPS()
 console.log(playRPS())
 
 

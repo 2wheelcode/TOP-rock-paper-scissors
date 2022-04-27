@@ -57,6 +57,13 @@ playRound(playerSelection(), computerSelection())
 console.log(playRound(playerSelection(), computerSelection()))
 
 
+function game() {
+    for (let i = 0; i<5; i++) {
+        playRound()
+    } 
+}
+console.log(game)
+
 /*
 III. create a function game() {
     i. call playRockPaperScissors()

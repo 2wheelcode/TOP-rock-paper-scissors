@@ -32,12 +32,12 @@ II. create a function playRockPaperScissors() {
 * Going to want to return the results of the game later, as wll add a Graphical Interface
 } */
 
-//playerInput = prompt("Let's play Rock - Paper - Scissors! \n What's your choice?")
+playerInput = prompt("Let's play Rock - Paper - Scissors! \n What's your choice?")
 function playerSelection() {
 return playerInput[0].toUpperCase() + playerInput.slice(1).toLowerCase();
 }
 //console.log(playerInput) // = player input - CHECK
-//console.log(playerSelection()) // = player input converted to Capitalize, case insensitive - CHECK
+//console.log(playerSelection()) // = playerInput converted to Capitalize, case insensitive - CHECK
 
 function playRound(playerSelection, computerSelection) {
     console.log(playerSelection, computerSelection) // correct arguments being passed into function
@@ -58,15 +58,15 @@ console.log(playRound(playerSelection(), computerSelection()))
 
 
 function game() {
+    console.log(i)
     for (let i = 0; i<5; i++) {
         playRound()
     } 
+console.log(game())
 }
-console.log(game)
-
 /*
 III. create a function game() {
-    i. call playRockPaperScissors()
+    i. call playRound()
     ii. play 5 rounds, keep score, & report winner
         for loop
 } */

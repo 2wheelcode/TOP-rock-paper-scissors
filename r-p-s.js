@@ -1,4 +1,63 @@
-/* White Board Notes
+//White Board Notes Below
+
+let playerScore = 0
+let computerScore = 0
+
+
+const rpsValue = Math.floor(Math.random()*3)
+function computerSelection() { 
+    return ["Rock", "Paper", "Scissors"][rpsValue]   
+}
+console.log(rpsValue) // = random number - CHECK
+console.log(computerSelection()) // = random number converted to array value - CHECK
+
+
+playerInput = prompt("Let's play Rock - Paper - Scissors! \n What's your choice?")
+function playerSelection() {
+    return playerInput[0].toUpperCase() + playerInput.slice(1).toLowerCase();
+    }
+
+function playRound(playerSelection, computerSelection) {
+    console.log(playerSelection, computerSelection, playerScore, computerScore) // verifies correct arguments being passed into function
+    if (playerSelection === computerSelection) {
+        return `Simple minds think alike, ${playerSelection} It's a DRAW!`
+        } else if (
+            (playerSelection === 'Rock' && computerSelection === 'Scissors') ||
+            (playerSelection === 'Scissors' && computerSelection === 'Paper') ||
+            (playerSelection === 'Paper' && computerSelection === 'Rock')) {
+                playerScore = playerScore + 1              
+                console.log(playerScore)
+                return playerScore + `Man over machine! ${playerSelection} beats ${computerSelection} You Win!` 
+        } else {
+            computerScore = computerScore + 1
+            console.log(computerScore)
+            return computerScore + `${computerSelection} beats ${playerSelection} When you match wits with a half wit...the Machines win, humans suffer shame.`
+        }
+    //return winnerDeclaration - CHECK - will come back later to see about changing "beats"
+}
+playRound(playerSelection(), computerSelection(), playerScore, computerScore)
+console.log(playRound(playerSelection(), computerSelection(), playerScore, computerScore))
+console.log(playerScore, computerScore)
+
+
+
+/* function game() {
+    console.log(i)
+    for (let i = 0; i<5; i++) {
+        playRound(playerSelection(), computerSelection())
+    } 
+console.log(game())
+} */
+
+
+
+
+
+
+
+
+
+/*
 I. create a function computerPlay() { * Changing this name to computerSelection() for clarity
     return random of R-P-or-S
     * TIP: use console.log() to verify output before moving on
@@ -8,15 +67,15 @@ I. create a function computerPlay() { * Changing this name to computerSelection(
     compChoice = math.Floor (math.Random ()*1) (keep between 1-3)
     compChoice[variable]
     ie: compChoice random number = 2 returns Scissors
-    return [varible] 
+    return [variable] 
     function computerPlay() {
     return ["Rock", "Paper", "Scissors"][random_number_value]
     Ok, let's go!
-*/
+
 const rpsValue = Math.floor(Math.random()*3)
 function computerSelection() { 
     return ["Rock", "Paper", "Scissors"][rpsValue]   
-}
+}*/
 //console.log(rpsValue) // = random number - CHECK
 //console.log(computerSelection()) // = random number converted to array value - CHECK
 /*
@@ -30,16 +89,16 @@ II. create a function playRockPaperScissors() {
     2. input from player prompt to start
  
 * Going to want to return the results of the game later, as wll add a Graphical Interface
-} */
+}
 
-playerInput = prompt("Let's play Rock - Paper - Scissors! \n What's your choice?")
+//playerInput = prompt("Let's play Rock - Paper - Scissors! \n What's your choice?")
 function playerSelection() {
 return playerInput[0].toUpperCase() + playerInput.slice(1).toLowerCase();
-}
+} */
 //console.log(playerInput) // = player input - CHECK
 //console.log(playerSelection()) // = playerInput converted to Capitalize, case insensitive - CHECK
 
-function playRound(playerSelection, computerSelection) {
+/* function playRound(playerSelection, computerSelection) {
     console.log(playerSelection, computerSelection) // correct arguments being passed into function
     if (playerSelection === computerSelection) {
         return `Simple minds think alike, ${playerSelection} It's a DRAW!`
@@ -55,15 +114,16 @@ function playRound(playerSelection, computerSelection) {
 }
 playRound(playerSelection(), computerSelection())
 console.log(playRound(playerSelection(), computerSelection()))
+ */
 
 
-function game() {
+/* function game() {
     console.log(i)
     for (let i = 0; i<5; i++) {
-        playRound()
+        playRound(playerSelection(), computerSelection())
     } 
 console.log(game())
-}
+} */
 /*
 III. create a function game() {
     i. call playRound()

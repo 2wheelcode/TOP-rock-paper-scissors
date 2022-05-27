@@ -4,21 +4,21 @@ let playerScore = 0
 let computerScore = 0
 
 
-const rpsValue = Math.floor(Math.random()*3)
 function computerSelection() { 
+    const rpsValue = Math.floor(Math.random()*3)
     return ["Rock", "Paper", "Scissors"][rpsValue]   
 }
-console.log(rpsValue) // = random number - CHECK
-console.log(computerSelection()) // = random number converted to array value - CHECK
+// console.log(rpsValue) // = random number - CHECK
+// console.log(computerSelection()) // = random number converted to array value - CHECK
 
 
-playerInput = prompt("Let's play Rock - Paper - Scissors! \n What's your choice?")
 function playerSelection() {
+    let playerInput = prompt("Let's play Rock - Paper - Scissors! \n What's your choice?")
     return playerInput[0].toUpperCase() + playerInput.slice(1).toLowerCase();
     }
 
 function playRound(playerSelection, computerSelection) {
-    console.log(playerSelection, computerSelection, playerScore, computerScore) // verifies correct arguments being passed into function
+     // verifies correct arguments being passed into function
     if (playerSelection === computerSelection) {
         return `Simple minds think alike, ${playerSelection} It's a DRAW!`
         } else if (
@@ -26,18 +26,30 @@ function playRound(playerSelection, computerSelection) {
             (playerSelection === 'Scissors' && computerSelection === 'Paper') ||
             (playerSelection === 'Paper' && computerSelection === 'Rock')) {
                 playerScore = playerScore + 1              
-                console.log(playerScore)
-                return playerScore + `Man over machine! ${playerSelection} beats ${computerSelection} You Win!` 
+                console.log(playerScore, computerScore)
+                console.log(playerScore + `Man over machine! ${playerSelection} beats ${computerSelection} You Win!`) 
         } else {
             computerScore = computerScore + 1
-            console.log(computerScore)
-            return computerScore + `${computerSelection} beats ${playerSelection} When you match wits with a half wit...the Machines win, humans suffer shame.`
+            console.log(playerScore, computerScore)
+            // return computerScore + `${computerSelection} beats ${playerSelection} When you match wits with a half wit...the Machines win, humans suffer shame.`
         }
-    //return winnerDeclaration - CHECK - will come back later to see about changing "beats"
+        //return winnerDeclaration - CHECK - will come back later to see about changing "beats"
+        
+        
+    }
+    
+function rematch(){
+
+    playRound(playerSelection(), computerSelection(), playerScore, computerScore)
+
 }
-playRound(playerSelection(), computerSelection(), playerScore, computerScore)
-console.log(playRound(playerSelection(), computerSelection(), playerScore, computerScore))
-console.log(playerScore, computerScore)
+
+while(computerScore < 2 && playerScore < 2){
+    console.log(playerScore, computerScore)
+    rematch()
+}
+// console.log(playRound(playerSelection(), computerSelection(), playerScore, computerScore))
+// console.log(playerScore, computerScore)
 
 
 
@@ -142,3 +154,37 @@ feel free to create more "helper functions" if I think it's useful
 
 */
 
+
+
+//RPS
+//auto generated computer response = random selection from an array , 
+// user selection is a direct input 
+
+// R>S R==R R<P
+
+// playerSore and a computerScore 
+
+
+
+/*
+globally scoped variables
+function()
+functions()
+
+while (breakcondition based on the globally scoped variables) (
+    playRound()=> when this function is called, the global variables are updated
+)
+print "GameOver, Player1/2 wins"
+
+
+
+
+
+
+
+
+
+
+
+
+*/
